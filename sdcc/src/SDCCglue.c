@@ -35,7 +35,6 @@ set *externs = NULL;		/* Varibles that are declared as extern */
 
 /* TODO: this should be configurable (DS803C90 uses more than 6) */
 int maxInterrupts = 6;
-int allocInfo = 1;
 extern int maxRegBank ;
 symbol *mainf;
 extern char *VersionString;
@@ -229,9 +228,7 @@ static void emitRegularMap (memmap * map, bool addPublics, bool arFlag)
 		ival = newNode ('=', newAst (EX_VALUE, symbolVal (sym)),
 				decorateType (resolveSymbols (list2expr (sym->ival))));
 	    codeOutFile = statsg->oFile;
-	    allocInfo = 0;
 	    eBBlockFromiCode (iCodeFromAst (ival));
-	    allocInfo = 1;
 	    sym->ival = NULL;
 	}
     }
@@ -1051,8 +1048,7 @@ void glue ()
     
     /* print the global variables in this module */
     printPublics (asmFile);
-    if (port->assembler.externGlobal)
-	printExterns (asmFile);
+    printExterns (asmFile);
 
     /* copy the sfr segment */
     fprintf (asmFile, "%s", iComments2);

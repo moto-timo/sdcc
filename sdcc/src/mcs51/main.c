@@ -202,7 +202,6 @@ PORT mcs51_port = {
 	_asmCmd,
 	"-plosgffc",		/* Options with debug */
 	"-plosgff",		/* Options without debug */
-	0
     },
     {
 	_linkCmd

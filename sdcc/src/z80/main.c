@@ -260,7 +260,6 @@ PORT gbz80_port = {
 	_gbz80_asmCmd,
 	"-plosgff",		/* Options with debug */
 	"-plosgff",		/* Options without debug */
-	1
     },
     {
 	_gbz80_linkCmd
