@@ -322,9 +322,6 @@ static PORT *_ports[] = {
 #if !OPT_DISABLE_R2K
   &r2k_port,
 #endif
-#if !OPT_DISABLE_R3KA
-  &r3ka_port,
-#endif
 #if !OPT_DISABLE_AVR
   &avr_port,
 #endif
