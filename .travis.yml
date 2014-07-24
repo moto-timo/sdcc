@@ -1,0 +1,8 @@
+language: c
+install:
+  - sudo apt-get -y install gputils libboost-dev bison flex
+  - sudo apt-get -y install libc6:i386
+script:
+  - cd sdcc
+  - ./configure && make && sudo make install
+  - sdcc -v
