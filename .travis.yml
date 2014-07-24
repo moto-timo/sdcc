@@ -6,3 +6,5 @@ script:
   - cd sdcc
   - ./configure && make && sudo make install
   - sdcc -v
+  - cd support/regression
+  - make
